@@ -1,0 +1,159 @@
+/* Definición de variables CSS */
+:root {
+    --primary-color: #1e3a8a;  /* Azul */
+    --secondary-color: #ef4444;  /* Rojo */
+    --text-color: #ffffff;  /* Blanco */
+    --background-color: #f3f4f6;  /* Gris claro */
+    --hover-color: #c82333;  /* Rojo más oscuro en hover */
+  }
+  
+/* Contenedor general */
+.container {
+  display: flex;
+  justify-content: space-between;
+  padding: 40px;
+  gap: 30px; /* Añadir espacio entre la lista y la imagen */
+}
+
+/* Estilos para la lista de especialidades */
+.specialties {
+  width: 50%; /* Establece el ancho de la lista */
+  border-radius: 10px;
+  padding: 10px;
+  background-color: var(--background-color);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.specialties h3 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: var(--primary-color);
+  text-align: center;
+}
+
+.list-group {
+  padding-left: 0;
+  margin-bottom: 0;
+}
+
+.list-group-item {
+  padding: 15px;
+  background-color:transparent;
+  margin-bottom: 10px;
+  transition: background-color 0.3s, color 0.3s;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Estilo para el botón */
+.specialty-btn {
+  display: block;
+  width: 100%;
+  background-color: white;
+  border: 1px solid #ddd; /* Bordes del botón */
+  border-radius: 8px; /* Borde redondeado */
+  font-size: 18px;
+  color: var(--primary-color);
+  text-align: left;
+  padding: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Estilo para el hover del botón */
+.specialty-btn:hover {
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+}
+
+/* Estilos para la imagen */
+.image-container img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Asegúrate de que la imagen sea proporcional */
+.image-container {
+  width: 45%; /* Controla el tamaño de la imagen */
+}
+
+/* Adaptaciones en pantallas pequeñas */
+@media (max-width: 768px) {
+  .container {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .specialties, .image-container {
+      width: 90%; /* Hacer la lista y la imagen más grandes en pantallas pequeñas */
+  }
+}
+  /* Estilos generales */
+:root {
+    --primary-color: #1e3a8a;  /* Azul primario */
+    --secondary-color: #ef4444;  /* Rojo primario */
+    --text-color: #ffffff;  /* Blanco */
+    --background-color: #f3f4f6;  /* Gris claro */
+    --hover-color: #e40606;  /* Hover color */
+    --title-color: #2c3e50;  /* Color para los títulos */
+  }
+  
+  /* Contenedor de los servicios */
+  .services {
+    padding: 40px 20px;
+    background-color: var(--background-color);
+  }
+  
+  h2.section-title {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    font-weight: bold;
+  }
+  
+  .service-description {
+    font-size: 1rem;
+    color: var(--text-color);
+    margin-bottom: 25px;
+  }
+  
+  /* Estilos para los servicios, alternando colores */
+  .services .service-description:nth-child(odd) {
+    background-color: var(--secondary-color);
+    padding: 10px;
+    border-radius: 8px;
+  }
+  
+  .services .service-description:nth-child(even) {
+    background-color: var(--primary-color);
+    padding: 10px;
+    border-radius: 8px;
+  }
+  
+  .services p {
+    font-size: 1rem;
+    color: var(--text-color);
+  }
+  
+  /* Hover para la sección de texto */
+  .service-description:hover {
+    background-color: var(--hover-color);
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Ajustes responsivos */
+  @media (max-width: 768px) {
+    .services {
+      padding: 20px 10px;
+    }
+  
+    .service-description {
+      font-size: 0.9rem;
+    }
+  }
+  

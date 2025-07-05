@@ -1,1 +1,100 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { 
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  font-family: 'Open Sans', sans-serif;
+
+}
+
+/* Definición de variables CSS en :root */
+:root {
+  --primary-color: #0c2468;  /* Azul primario */
+  --secondary-color: #c21010;  /* Rojo primario */
+  --text-color: #ffffff; /* Blanco */
+  --text-color2: #000000;  
+  --background-color: #f3f4f6;  /* Gris claro */
+  --header-text-color: #ffffff;  /* Color de texto blanco */
+  --hover-color: #e40606;  /* Color gris claro en hover */
+  --logo-color: #ffffff;  /* Color blanco para el logo */
+  --social-icon-color: #ffffff;  /* Color blanco para los íconos sociales */
+  --first-container-bg: #130f40;  /* Fondo para el primer contenedor */
+  --second-container-bg: #34495e; /* Fondo para el segundo contenedor */
+  --newsletter-bg: #f3f4f6;  /* Gris claro de fondo */
+  --btn-danger-color: #e00a0a;  /* Color de botón */
+  --btn-text-color: #ffffff;  /* Color del texto en el botón */
+  --area-bg-color: #f5f2f2;  /* Fondo gris claro */
+  --btn-outline-color: #e00d0d;  /* Color del borde de los botones */
+  --area-title-color: #1e3a8a;  /* Color azul */
+  --form-background: #f5eeee; /* Gris claro */
+  --input-border-color: #a72f2f;  /* Gris claro para bordes de input */
+  --title-color: #2c3e50;  /* Color para los títulos */
+  
+  --footer-bg-color: #2c3e50; /* Fondo gris oscuro */
+  --footer-text-color: #ffffff; /* Blanco para el texto del footer */
+  --footer-link-color: #ef4444; /* Rojo para los enlaces */
+  --overlay-bg: rgba(0, 0, 0, 0.5); /* Color de overlay oscuro */
+  --divider-color: #e40606; /* Rojo escarlata para el separador */
+
+ 
+  --scrolled-bg-color: #333333; /* Color de fondo cuando se hace scroll */
+  --text-color2: #ffffff; /* Blanco para texto */
+}
+
+  /* Contenedor de la línea */
+  .line-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+  }
+  
+  /* Línea con círculos */
+  .line {
+    display: flex;
+    justify-content: space-between;
+    width: 300px;  /* Ajusta el largo de la línea */
+    height: 4px;  /* Grosor de la línea */
+    background-color:var(--secondary-color);  /* Rojo para la línea */
+    position: relative;
+    overflow: hidden;
+  }
+  
+  /* Círculos */
+  .circle {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color:var(--primary-color);
+    position: absolute;
+    top: -3px; /* Ajuste para alinear los círculos a la línea */
+    animation: moveCircle 1.5s linear infinite;
+  }
+  
+  /* Animación para los círculos */
+  @keyframes moveCircle {
+    0% {
+      left: 0;
+    }
+    50% {
+      left: 100%;
+    }
+    100% {
+      left: 0;
+    }
+  }
+  
+  /* Delay para cada círculo */
+  .circle:nth-child(1) {
+    animation-delay: 2s;
+  }
+  
+  .circle:nth-child(2) {
+    animation-delay: 0.5s;
+  }
+  
+  .circle:nth-child(3) {
+    animation-delay: 3s;
+  }
+  

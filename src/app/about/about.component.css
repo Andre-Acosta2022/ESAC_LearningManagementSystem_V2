@@ -1,0 +1,373 @@
+/* Estilo general para la sección del breadcrumb */
+.breadcrumb-section {
+  position: relative;
+  height: 200px;  /* Ajusta la altura como desees */
+  background: url('/about2.jpeg') no-repeat center center;
+  background-size: cover;
+  margin-bottom:50px;
+}
+
+/* Capa de sobrecarga con color oscuro */
+.breadcrumb-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);  /* Fondo oscuro con opacidad */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;  /* El texto será blanco */
+  text-align: center;
+}
+
+/* Estilo para el título del breadcrumb */
+.breadcrumb-title {
+  font-size: 30px;  /* Tamaño del texto */
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* Estilo para la ruta de navegación */
+.breadcrumb-path {
+  font-size: 16px;  /* Tamaño del texto */
+}
+
+/* Estilo para los enlaces de la ruta de navegación */
+.breadcrumb-path a {
+  color: white;
+  text-decoration: none;
+}
+
+.breadcrumb-path a:hover {
+  color: var(--secondary-color);  /* Rojo para el hover */
+}
+
+.breadcrumb-path span {
+  color: #f3f4f6;  /* Color gris claro para el último elemento */
+}
+
+
+/* Estilo general de la sección */
+.company-section {
+    background-color: #f9f9f9;
+    padding: 50px 0 ;
+  }
+  
+  /* Estilo para el contenedor */
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  /* Estilo para cada item (Misión y Visión) */
+  .section-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+  }
+  
+  .text-content {
+    flex: 1;
+    padding-right: 30px;
+  }
+  
+  .text-content h2 {
+    font-size: 28px;
+    color: var(--first-container-bg);
+    margin-bottom: 20px;
+  }
+  
+  .text-content p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333;
+  }
+  
+  .image-content {
+    flex: 1;
+    text-align: center;
+  }
+  
+  .image-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  .container h2{
+    text-align: center;
+    color: var(--first-container-bg);
+  }
+  /* Ajustes para pantallas pequeñas */
+  @media (max-width: 768px) {
+    .section-item {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .text-content {
+      padding-right: 0;
+      margin-bottom: 20px;
+    }
+  
+    .image-content img {
+      max-width: 80%;
+    }
+  }
+  /* Estilo para la sección de valores */
+.values-section {
+    background-color: var(--footer-text-color);
+    padding: 50px 0;
+  }
+  /* Contenedor de valores (izquierda y derecha) */
+.content-wrapper {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+/* Parte izquierda: Los valores */
+.values-left {
+  flex: 1;
+}
+
+/* Parte derecha: Imagen */
+.values-right {
+  flex: 1;
+  display: flex;
+  justify-content: center; /* Centra la imagen */
+  align-items: center; /* Centra la imagen verticalmente */
+}
+
+/* Estilo para la imagen */
+.values-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+  /* Título de la sección */
+  .section-title {
+    font-size: 36px;
+    font-weight: bold;
+    color: #1e3a8a;
+    margin-bottom: 30px;
+  }
+  
+  /* Estilo para las tarjetas (valores) */
+  .card {
+    margin-bottom: 10px;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Estilo para el encabezado de cada tarjeta */
+  .card-header {
+    background-color:var(--secondary-color);
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 5px 0;
+    cursor: pointer;
+  }
+  
+  /* Estilo para el cuerpo de cada tarjeta */
+  .card-body {
+    background-color: white;
+    padding: 20px;
+    font-size: 14px;
+    color: #333;
+  }
+/* Estilo para los íconos del acordeón */
+.plus-minus-icon {
+  font-size: 20px;
+  margin-right: 10px;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Rotación del ícono al abrir el acordeón */
+.collapse.show .plus-minus-icon {
+  transform: rotate(45deg);
+}
+/* Cuando el acordeón está cerrado */
+.plus-minus-icon::before {
+  content: "\f067"; /* Código del icono de "+" */
+  font-family: "Font Awesome 5 Free";
+}
+
+/* Cuando el acordeón está abierto */
+.collapse.show .plus-minus-icon::before {
+  content: "\f068"; /* Código del icono de "-" */
+}
+  /* Estilo para los botones en los enlaces de los valores */
+  .card-header .btn {
+    color:var(--btn-text-color);
+    text-align: left;
+    display: block;
+    align-items: center; /* Alinea los iconos a la izquierda */
+    width: 100%;
+    text-decoration: none;
+
+  }
+  
+  .card-header .btn:hover {
+    color: var(--primary-color);
+  }
+
+  /* Estilo para el acordeón abierto y cerrado */
+.collapse.show .plus-minus-icon {
+  content: "-"; /* Cuando el acordeón está abierto, se muestra el signo menos */
+  color:var(--secondary-color);
+}
+
+.collapse:not(.show) .plus-minus-icon {
+  content: "+"; /* Cuando el acordeón está cerrado, se muestra el signo más */
+  color: var(--secondary-color);
+}
+  /* Variables para el formulario */
+
+  
+ /* Contenedor principal del formulario */
+.contact-form {
+  background-color: hsl(220, 14%, 96%);
+  padding: 50px 0;
+}
+
+.form-container {
+  background-color: white;
+  border-radius: 15px;
+  padding: 30px;  /* Aumenté el padding para que se vea más espacioso */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 500px; /* Limita el ancho del contenedor */
+  margin: 0 auto; /* Centra el contenedor */
+}
+
+.section-title {
+  font-size: 36px;
+  font-weight: bold;
+  color: #1e3a8a;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.container {
+  max-width: 1000px; /* Aumenté el ancho del contenedor para que ocupe más espacio */
+  margin: 0 auto;
+}
+
+.form-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.form-control {
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 16px;
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+}
+
+.form-check {
+  margin-bottom: 20px;
+}
+
+.form-check-input {
+  margin-right: 10px;
+}
+
+.btn-danger {
+  background-color: #ef4444;
+  color: white;
+  font-weight: bold;
+  padding: 15px 20px;
+  border-radius: 10px;
+  width: 100%;
+  box-sizing: border-box;
+  text-align: center;
+  border: none;
+}
+
+.btn-danger:hover {
+  background-color: #c82333;
+}
+
+@media (max-width: 768px) {
+  .form-group {
+    width: 100%;
+  }
+
+  .btn-danger {
+    width: auto;
+  }
+}
+
+  
+  /* Contenedor de la línea */
+.line-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+}
+
+/* Línea con círculos */
+.line {
+  display: flex;
+  justify-content: space-between;
+  width: 300px;  /* Ajusta el largo de la línea */
+  height: 4px;  /* Grosor de la línea */
+  background-color:var(--secondary-color);  /* Rojo para la línea */
+  position: relative;
+  overflow: hidden;
+}
+
+/* Círculos */
+.circle {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color:var(--primary-color);
+  position: absolute;
+  top: -3px; /* Ajuste para alinear los círculos a la línea */
+  animation: moveCircle 1.5s linear infinite;
+}
+
+/* Animación para los círculos */
+@keyframes moveCircle {
+  0% {
+    left: 0;
+  }
+  50% {
+    left: 100%;
+  }
+  100% {
+    left: 0;
+  }
+}
+
+/* Delay para cada círculo */
+.circle:nth-child(1) {
+  animation-delay: 2s;
+}
+
+.circle:nth-child(2) {
+  animation-delay: 0.5s;
+}
+
+.circle:nth-child(3) {
+  animation-delay: 3s;
+}

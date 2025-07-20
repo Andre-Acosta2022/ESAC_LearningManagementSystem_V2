@@ -49,11 +49,11 @@
             <!-- Menú de navegación -->
       <div class="nav-links">
         <ul>
-          <li><a routerLink="/" class="nav-link">Inicio</a></li>
-          <li><a routerLink="/about" class="nav-link">Nosotros</a></li>
-          <li><a routerLink="/areas" class="nav-link">Áreas</a></li>
-          <li><a routerLink="/courses" class="nav-link">Cursos</a></li>
-          <li><a routerLink="/contact" class="nav-link">Contáctenos</a></li>
+         <li><a (click)="navigateTo('/', $event)" class="nav-link">Inicio</a></li>
+<li><a (click)="navigateTo('/about', $event)" class="nav-link">Nosotros</a></li>
+<li><a (click)="navigateTo('/areas', $event)" class="nav-link">Áreas</a></li>
+<li><a (click)="navigateTo('/courses', $event)" class="nav-link">Cursos</a></li>
+<li><a (click)="navigateTo('/contact', $event)" class="nav-link">Contáctenos</a></li>
         </ul>
       </div>
 
@@ -72,12 +72,13 @@
   <!-- Menú móvil desplegable -->
   <div class="mobile-menu" [class.active]="isMenuOpen">
     <ul>
-      <li><a routerLink="/" (click)="closeMenu()">Inicio</a></li>
-      <li><a routerLink="/about" (click)="closeMenu()">Nosotros</a></li>
-      <li><a routerLink="/areas" (click)="closeMenu()">Áreas</a></li>
-      <li><a routerLink="/courses" (click)="closeMenu()">Cursos</a></li>
-      <li><a routerLink="/contact" (click)="closeMenu()">Contáctenos</a></li>
-      <li><a routerLink="/login" (click)="closeMenu()" class="btn btn-primary mobile-btn">Aula Virtual</a></li>
+<!-- Para menú móvil -->
+<li><a (click)="navigateTo('/', $event)">Inicio</a></li>
+<li><a (click)="navigateTo('/about', $event)">Nosotros</a></li>
+<li><a (click)="navigateTo('/areas', $event)">Áreas</a></li>
+<li><a (click)="navigateTo('/courses', $event)">Cursos</a></li>
+<li><a (click)="navigateTo('/contact', $event)">Contáctenos</a></li>
+<li><a (click)="navigateTo('/login', $event)" class="btn btn-primary mobile-btn">Aula Virtual</a></li>
     </ul>
   </div>
   <!-- Overlay -->

@@ -1,5 +1,6 @@
 
 import { Component,OnInit, HostListener } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -11,7 +12,7 @@ export class HeaderComponent implements OnInit {
   isMenuOpen = false;
   isScrolled = false;
 
-  constructor() { }
+    constructor(private router: Router) { }
 
   ngOnInit(): void { }
 
@@ -34,5 +35,11 @@ export class HeaderComponent implements OnInit {
   closeMenu() {
     this.isMenuOpen = false;
     document.body.style.overflow = 'auto';
+    
+  }
+    navigateTo(path: string, event: Event) {
+    event.preventDefault();
+    this.closeMenu();
+    this.router.navigate([path]);
   }
 }

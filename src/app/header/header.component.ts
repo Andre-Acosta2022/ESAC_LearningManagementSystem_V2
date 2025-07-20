@@ -1,27 +1,38 @@
 
-import { Component,OnInit, AfterViewInit, ViewChild, ElementRef, HostListener } from '@angular/core';
+import { Component,OnInit, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-header',
-  imports: [],
+
   templateUrl: './header.component.html',
   styleUrl: './header.component.css'
 })
-export class HeaderComponent  implements OnInit {
+export class HeaderComponent implements OnInit {
+  isMenuOpen = false;
+  isScrolled = false;
 
   constructor() { }
 
   ngOnInit(): void { }
 
-  @HostListener('window:scroll', ['$event'])
-  onWindowScroll(event: Event): void {
-    const scrollPosition = window.scrollY; // Detecta el desplazamiento hacia abajo de la página
-    const header = document.getElementById('second-container'); // Encuentra el contenedor donde deseas cambiar el fondo
-    
-    if (scrollPosition > 50) {  // Cambiar cuando el scroll sea mayor que 50px
-      header?.classList.add('scrolled'); // Se agrega la clase cuando se hace scroll
+  @HostListener('window:scroll', [])
+  onWindowScroll() {
+    this.isScrolled = window.scrollY > 50;
+  }
+
+  toggleMenu() {
+    this.isMenuOpen = !this.isMenuOpen;
+    // Bloquear el scroll del cuerpo cuando el menú está abierto
+    if (this.isMenuOpen) {
+      document.body.style.overflow = 'hidden';
     } else {
-      header?.classList.remove('scrolled'); // Se elimina la clase cuando no hay scroll
+      document.body.style.overflow = 'auto';
     }
+  }
+
+  // Cerrar el menú al cambiar de ruta
+  closeMenu() {
+    this.isMenuOpen = false;
+    document.body.style.overflow = 'auto';
   }
 }

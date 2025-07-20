@@ -8,14 +8,14 @@ import { AreasComponent } from './areas/areas.component';
 import { AboutComponent } from './about/about.component';
 import { HomeComponent } from './home/home.component';
 
-// Definición de rutas
-export const routes: Routes = [
-  { path: '', component: HomeComponent },  // Ruta para el home
-  { path: 'about', component: AboutComponent },  // Ruta para "Nosotros"
-  { path: 'areas', component: AreasComponent },  // Ruta para "Áreas"
-  { path: 'courses', component: CoursesComponent },  // Ruta para "Cursos"
-  { path: 'contact', component: ContactComponent },  // Ruta para "Contáctenos"
-  { path: 'login', component: LoginComponent }  // Ruta para "Login"
+const routes: Routes = [
+  { path: '', component: HomeComponent },
+  { path: 'about', component: AboutComponent },
+  { path: 'areas', component: AreasComponent },
+  { path: 'courses', component: CoursesComponent },
+  { path: 'contact', component: ContactComponent },
+  { path: 'login', component: LoginComponent },
+  { path: '**', redirectTo: '' } // Redirige rutas no encontradas al home
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],  // Configura las rutas con RouterModule

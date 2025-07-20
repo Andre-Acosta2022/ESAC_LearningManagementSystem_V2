@@ -1,52 +1,108 @@
-<div class="container-fluid">
-    <div class="row">
-      <!-- Productos -->
-      <div class="col-md-9">
-        <div class="product-container">
-          <div class="product-card">
-            <img src="path-to-image" class="product-image" alt="Producto 1">
-            <div class="product-details">
-              <h5>Promoción de 3 x 1</h5>
-              <p class="price"><span class="old-price">S/ 99.00</span> S/ 50.00</p>
-              <button class="btn btn-danger">Agregar al carrito</button>
-            </div>
-          </div>
-          <div class="product-card">
-            <img src="path-to-image" class="product-image" alt="Producto 2">
-            <div class="product-details">
-              <h5>Gestión Pública</h5>
-              <p class="price"><span class="old-price">S/ 99.00</span> S/ 50.00</p>
-              <button class="btn btn-danger">Agregar al carrito</button>
-            </div>
-          </div>
-          <!-- Más productos aquí -->
-        </div>
-  
-        <!-- Paginación -->
-        <div class="pagination">
-          <span>1</span>
-          <span>2</span>
-          <span>></span>
-        </div>
-      </div>
-  
-      <!-- Menú lateral -->
-      <div class="col-md-3">
-        <div class="menu">
-          <h4>Menu</h4>
-          <ul>
-            <li><a href="#">Auditoría</a></li>
-            <li><a href="#">Derecho</a></li>
-            <li><a href="#">Gestión</a></li>
-            <li><a href="#">Informática</a></li>
-            <li><a href="#">Marketing</a></li>
-            <li><a href="#">Otros</a></li>
-            <li><a href="#">Pedagogía</a></li>
-            <li><a href="#">Recursos Humanos</a></li>
-            <li><a href="#">Salud</a></li>
-          </ul>
-        </div>
+<!-- Breadcrumb -->
+<section class="breadcrumb-section">
+  <div class="breadcrumb-overlay">
+    <div class="container">
+      <h1 class="breadcrumb-title">Nuestros Cursos</h1>
+      <div class="breadcrumb-path">
+        <a routerLink="/">Home</a> &gt; <span>Cursos</span>
       </div>
     </div>
   </div>
-  
+</section>
+
+<!-- Main Content -->
+<div class="container courses-container">
+  <div class="row">
+    <!-- Sidebar Menu -->
+    <div class="col-lg-3">
+      <div class="sidebar-card">
+        <h4 class="sidebar-title">Categorías</h4>
+        <ul class="category-list">
+          <li>
+            <button [class.active]="selectedCategory === null" (click)="selectCategory(null)">
+              Todas las categorías
+            </button>
+          </li>
+          <li *ngFor="let category of categories">
+            <button [class.active]="selectedCategory === category" (click)="selectCategory(category)">
+              {{ category }}
+            </button>
+          </li>
+        </ul>
+      </div>
+      
+      <div class="sidebar-promo">
+        <h4>Oferta Especial</h4>
+        <p>¡Matrícula gratis en todos los cursos!</p>
+        <div class="promo-badge">50% OFF</div>
+      </div>
+    </div>
+    
+    <!-- Courses Grid -->
+    <div class="col-lg-9">
+      <div class="courses-header">
+        <h2>Cursos Disponibles</h2>
+        <p>Encuentra el programa perfecto para tu desarrollo profesional</p>
+      </div>
+      
+      <div *ngIf="filteredCourses.length === 0" class="no-results">
+        <i class="fas fa-search"></i>
+        <h4>No se encontraron cursos en esta categoría</h4>
+        <button (click)="selectCategory(null)">Ver todos los cursos</button>
+      </div>
+      
+      <div class="row courses-grid">
+        <div class="col-md-6 col-lg-4 mb-4" *ngFor="let course of filteredCourses">
+          <div class="course-card">
+            <div class="course-image">
+              <img [src]="course.image" alt="{{course.name}}">
+              <div class="course-badge">{{course.category}}</div>
+              <div class="discount-badge">-{{((course.oldPrice - course.price)/course.oldPrice * 100).toFixed(0)}}%</div>
+            </div>
+            <div class="course-details">
+              <h5>{{course.name}}</h5>
+              
+              <div class="course-meta">
+                <div class="meta-item">
+                  <i class="fas fa-clock"></i>
+                  <span>{{course.duration}}</span>
+                </div>
+                <div class="meta-item">
+                  <i class="fas fa-user-graduate"></i>
+                  <span>{{course.students}} estudiantes</span>
+                </div>
+              </div>
+              
+              <div class="course-rating">
+                <div class="stars">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star-half-alt"></i>
+                </div>
+                <span>{{course.rating}}</span>
+              </div>
+              
+              <div class="price-container">
+                <span class="old-price">S/ {{course.oldPrice.toFixed(2)}}</span>
+                <span class="price">S/ {{course.price.toFixed(2)}}</span>
+              </div>
+              
+              <button class="btn-add-to-cart" (click)="addToCart(course)">
+                <i class="fas fa-shopping-cart"></i> Agregar al carrito
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Pagination -->
+      <div class="pagination">
+        <button class="page-btn">1</button>
+        <button class="page-btn">2</button>
+        <button class="page-btn next-btn">></button>
+      </div>
+    </div>
+  </div>
+</div>

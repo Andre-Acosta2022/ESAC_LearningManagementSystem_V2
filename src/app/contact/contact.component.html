@@ -1,100 +1,136 @@
+<!-- Breadcrumb Section -->
 <section class="breadcrumb-section">
   <div class="breadcrumb-overlay">
     <div class="container">
-      <h1 class="breadcrumb-title">Contactenos</h1>
-      <p class="breadcrumb-path">
-        <a href="/">Home</a> &gt; <span>Contactenos</span>
-      </p>
-    </div>
-  </div>
-</section>
-<section class="contact-section">
-  <div class="container2 py-5">
-    <!-- Contenedor de información de contacto -->
-    <div class="contact-info">
-      <!-- Teléfono -->
-      <div class="contact-icon">
-        <i class="fas fa-phone-alt"></i>
-      </div>
-      <div class="contact-item">
-        <h3>Teléfono</h3>
-        <p class="contact-text">(+51) 916 356 566</p>
-      </div>
-      
-      <!-- Correo -->
-      <div class="contact-icon">
-        <i class="fas fa-envelope"></i>
-      </div>
-      <div class="contact-item">
-
-        <h3>Correo</h3>
-        <p class="contact-text">informesesacperu.com</p>
-      </div>
-      
-      <!-- Dirección -->
-      <div class="contact-icon">
-        <i class="fas fa-map-marker-alt"></i>
-      </div>
-      <div class="contact-item">
-        <h3>Dirección</h3>
-        <p class="contact-text">C. Arequipa Mz. D Lte. 26 Urb. Tilda - Ate Vitarte - Lima</p>
+      <h1 class="breadcrumb-title">Contáctenos</h1>
+      <div class="breadcrumb-path">
+        <a routerLink="/">Home</a> &gt; <span>Contáctenos</span>
       </div>
     </div>
   </div>
 </section>
 
+<!-- Contact Info Section -->
+<section class="contact-info-section">
+  <div class="container">
+    <div class="contact-info-grid">
+      <div class="contact-card">
+        <div class="contact-icon">
+          <i class="fas fa-phone-alt"></i>
+        </div>
+        <div class="contact-content">
+          <h3>Teléfono</h3>
+          <p>(+51) 916 356 566</p>
+        </div>
+      </div>
+      
+      <div class="contact-card">
+        <div class="contact-icon">
+          <i class="fas fa-envelope"></i>
+        </div>
+        <div class="contact-content">
+          <h3>Correo</h3>
+          <p>informesesacperu.com</p>
+        </div>
+      </div>
+      
+      <div class="contact-card">
+        <div class="contact-icon">
+          <i class="fas fa-map-marker-alt"></i>
+        </div>
+        <div class="contact-content">
+          <h3>Dirección</h3>
+          <p>C. Arequipa Mz. D Lte. 26 Urb. Tilda - Ate Vitarte - Lima</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-
-     <!-- fromulario de contacto-->
- <section class="contact-form">
-  <div class="form-container">
-    <div class="container py-5">
-      <h2 class="section-title">Contáctanos</h2>
-      <p>Contáctanos y obtén toda la información que necesitas</p>
-
-      <form action="#" method="POST">
+<!-- Contact Form Section -->
+<section class="contact-form-section">
+  <div class="container">
+    <div class="form-container">
+      <div class="form-header">
+        <h2>Contáctanos</h2>
+        <p>Contáctanos y obtén toda la información que necesitas</p>
+      </div>
+      
+      <form [formGroup]="contactForm" (ngSubmit)="submitContactForm()">
         <div class="form-row">
-          <div class="form-group col-md-6">
+          <div class="form-group">
             <label for="firstName">Nombres *</label>
-            <input type="text" id="firstName" name="firstName" class="form-control" placeholder="Ingresa tus nombres" required />
+            <input type="text" id="firstName" formControlName="firstName" 
+                   class="form-control" placeholder="Ingresa tus nombres">
+            <div *ngIf="contactForm.get('firstName')?.invalid && contactForm.get('firstName')?.touched" 
+                 class="error-message">
+              Por favor ingresa tus nombres
+            </div>
           </div>
 
-          <div class="form-group col-md-6">
+          <div class="form-group">
             <label for="lastName">Apellidos *</label>
-            <input type="text" id="lastName" name="lastName" class="form-control" placeholder="Ingresa tus apellidos" required />
+            <input type="text" id="lastName" formControlName="lastName" 
+                   class="form-control" placeholder="Ingresa tus apellidos">
+            <div *ngIf="contactForm.get('lastName')?.invalid && contactForm.get('lastName')?.touched" 
+                 class="error-message">
+              Por favor ingresa tus apellidos
+            </div>
           </div>
         </div>
 
         <div class="form-row">
-          <div class="form-group col-md-6">
+          <div class="form-group">
             <label for="phone">Teléfono *</label>
-            <input type="tel" id="phone" name="phone" class="form-control" placeholder="999 999 999" required />
+            <input type="tel" id="phone" formControlName="phone" 
+                   class="form-control" placeholder="999 999 999">
+            <div *ngIf="contactForm.get('phone')?.invalid && contactForm.get('phone')?.touched" 
+                 class="error-message">
+              Por favor ingresa un teléfono válido (9 dígitos)
+            </div>
           </div>
 
-          <div class="form-group col-md-6">
+          <div class="form-group">
             <label for="email">Email *</label>
-            <input type="email" id="email" name="email" class="form-control" placeholder="ejemplo@dominio.com" required />
+            <input type="email" id="email" formControlName="email" 
+                   class="form-control" placeholder="ejemplo@dominio.com">
+            <div *ngIf="contactForm.get('email')?.invalid && contactForm.get('email')?.touched" 
+                 class="error-message">
+              Por favor ingresa un email válido
+            </div>
           </div>
         </div>
 
-        <div class="form-row">
-          <div class="form-group col-md-6">
-            <label for="department">Departamento *</label>
-            <select id="department" name="department" class="form-control" required>
-              <option value="">Seleccione</option>
-              <option value="Lima">Lima</option>
-              <option value="Arequipa">Arequipa</option>
-              <option value="Cusco">Cusco</option>
-            </select>
+        <div class="form-group">
+          <label for="department">Departamento *</label>
+          <select id="department" formControlName="department" class="form-control">
+            <option value="">Seleccione</option>
+            <option *ngFor="let dept of departments" [value]="dept">{{ dept }}</option>
+          </select>
+          <div *ngIf="contactForm.get('department')?.invalid && contactForm.get('department')?.touched" 
+               class="error-message">
+            Por favor selecciona un departamento
           </div>
         </div>
 
-        <div class="form-check">
-          <input type="checkbox" class="form-check-input" id="terms" name="terms" required />
-          <label class="form-check-label" for="terms">Acepto las políticas de seguridad y los términos y condiciones</label>
+        <div class="form-group">
+          <label for="message">Mensaje</label>
+          <textarea id="message" formControlName="message" 
+                    class="form-control" rows="4" placeholder="Escribe tu mensaje aquí"></textarea>
         </div>
 
-        <button type="submit" class="btn btn-danger">Enviar</button>
+        <div class="form-group terms-group">
+          <input type="checkbox" id="terms" formControlName="terms">
+          <label for="terms">Acepto las políticas de seguridad y los términos y condiciones</label>
+          <div *ngIf="contactForm.get('terms')?.invalid && contactForm.get('terms')?.touched" 
+               class="error-message">
+            Debes aceptar los términos y condiciones
+          </div>
+        </div>
+
+        <button type="submit" class="btn-submit" [disabled]="contactForm.invalid">
+          Enviar Mensaje
+        </button>
       </form>
     </div>
   </div>

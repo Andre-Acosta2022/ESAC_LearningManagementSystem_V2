@@ -1,373 +1,411 @@
-/* Estilo general para la sección del breadcrumb */
-.breadcrumb-section {
-  position: relative;
-  height: 200px;  /* Ajusta la altura como desees */
-  background: url('/about2.jpeg') no-repeat center center;
-  background-size: cover;
-  margin-bottom:50px;
+/* Variables de colores */
+:root {
+  --primary: #1e3a8a;
+  --secondary: #c51111;
+  --accent: #ef4444;
+  --light: #f8f9fa;
+  --dark: #1f2937;
+  --gray: #6c757d;
+  --light-gray: #e9ecef;
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  --transition: all 0.3s ease;
 }
 
-/* Capa de sobrecarga con color oscuro */
+/* Breadcrumb Section */
+.breadcrumb-section {
+  position: relative;
+  height: 300px;
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/about1.jpg') no-repeat center center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  
+}
+
 .breadcrumb-overlay {
   position: absolute;
   top: 0;
   left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.5);  /* Fondo oscuro con opacidad */
+  width: 100%;
+  height: 100%;
   display: flex;
-  justify-content: center;
   align-items: center;
-  color: white;  /* El texto será blanco */
-  text-align: center;
 }
 
-/* Estilo para el título del breadcrumb */
 .breadcrumb-title {
-  font-size: 30px;  /* Tamaño del texto */
-  font-weight: bold;
-  margin-bottom: 10px;
+  font-size: 3rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 15px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-/* Estilo para la ruta de navegación */
 .breadcrumb-path {
-  font-size: 16px;  /* Tamaño del texto */
+  display: flex;
+  gap: 10px;
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.8);
 }
 
-/* Estilo para los enlaces de la ruta de navegación */
 .breadcrumb-path a {
   color: white;
   text-decoration: none;
+  transition: var(--transition);
 }
 
 .breadcrumb-path a:hover {
-  color: var(--secondary-color);  /* Rojo para el hover */
+  color: var(--accent);
 }
 
-.breadcrumb-path span {
-  color: #f3f4f6;  /* Color gris claro para el último elemento */
-}
-
-
-/* Estilo general de la sección */
-.company-section {
-    background-color: #f9f9f9;
-    padding: 50px 0 ;
-  }
-  
-  /* Estilo para el contenedor */
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-  }
-  
-  /* Estilo para cada item (Misión y Visión) */
-  .section-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 30px;
-  }
-  
-  .text-content {
-    flex: 1;
-    padding-right: 30px;
-  }
-  
-  .text-content h2 {
-    font-size: 28px;
-    color: var(--first-container-bg);
-    margin-bottom: 20px;
-  }
-  
-  .text-content p {
-    font-size: 16px;
-    line-height: 1.6;
-    color: #333;
-  }
-  
-  .image-content {
-    flex: 1;
-    text-align: center;
-  }
-  
-  .image-content img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
-  .container h2{
-    text-align: center;
-    color: var(--first-container-bg);
-  }
-  /* Ajustes para pantallas pequeñas */
-  @media (max-width: 768px) {
-    .section-item {
-      flex-direction: column;
-      text-align: center;
-    }
-  
-    .text-content {
-      padding-right: 0;
-      margin-bottom: 20px;
-    }
-  
-    .image-content img {
-      max-width: 80%;
-    }
-  }
-  /* Estilo para la sección de valores */
-.values-section {
-    background-color: var(--footer-text-color);
-    padding: 50px 0;
-  }
-  /* Contenedor de valores (izquierda y derecha) */
-.content-wrapper {
-  display: flex;
-  justify-content: space-between;
-  gap: 30px;
-  flex-wrap: wrap;
-}
-
-/* Parte izquierda: Los valores */
-.values-left {
-  flex: 1;
-}
-
-/* Parte derecha: Imagen */
-.values-right {
-  flex: 1;
-  display: flex;
-  justify-content: center; /* Centra la imagen */
-  align-items: center; /* Centra la imagen verticalmente */
-}
-
-/* Estilo para la imagen */
-.values-image {
-  max-width: 100%;
-  height: auto;
-  border-radius: 10px;
-}
-
-  /* Título de la sección */
-  .section-title {
-    font-size: 36px;
-    font-weight: bold;
-    color: #1e3a8a;
-    margin-bottom: 30px;
-  }
-  
-  /* Estilo para las tarjetas (valores) */
-  .card {
-    margin-bottom: 10px;
-    border-radius: 10px;
-    border: none;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  /* Estilo para el encabezado de cada tarjeta */
-  .card-header {
-    background-color:var(--secondary-color);
-    color: white;
-    font-size: 18px;
-    font-weight: bold;
-    padding: 5px 0;
-    cursor: pointer;
-  }
-  
-  /* Estilo para el cuerpo de cada tarjeta */
-  .card-body {
-    background-color: white;
-    padding: 20px;
-    font-size: 14px;
-    color: #333;
-  }
-/* Estilo para los íconos del acordeón */
-.plus-minus-icon {
-  font-size: 20px;
-  margin-right: 10px;
-  transition: transform 0.3s ease-in-out;
-}
-
-/* Rotación del ícono al abrir el acordeón */
-.collapse.show .plus-minus-icon {
-  transform: rotate(45deg);
-}
-/* Cuando el acordeón está cerrado */
-.plus-minus-icon::before {
-  content: "\f067"; /* Código del icono de "+" */
-  font-family: "Font Awesome 5 Free";
-}
-
-/* Cuando el acordeón está abierto */
-.collapse.show .plus-minus-icon::before {
-  content: "\f068"; /* Código del icono de "-" */
-}
-  /* Estilo para los botones en los enlaces de los valores */
-  .card-header .btn {
-    color:var(--btn-text-color);
-    text-align: left;
-    display: block;
-    align-items: center; /* Alinea los iconos a la izquierda */
-    width: 100%;
-    text-decoration: none;
-
-  }
-  
-  .card-header .btn:hover {
-    color: var(--primary-color);
-  }
-
-  /* Estilo para el acordeón abierto y cerrado */
-.collapse.show .plus-minus-icon {
-  content: "-"; /* Cuando el acordeón está abierto, se muestra el signo menos */
-  color:var(--secondary-color);
-}
-
-.collapse:not(.show) .plus-minus-icon {
-  content: "+"; /* Cuando el acordeón está cerrado, se muestra el signo más */
-  color: var(--secondary-color);
-}
-  /* Variables para el formulario */
-
-  
- /* Contenedor principal del formulario */
-.contact-form {
-  background-color: hsl(220, 14%, 96%);
-  padding: 50px 0;
-}
-
-.form-container {
-  background-color: white;
-  border-radius: 15px;
-  padding: 30px;  /* Aumenté el padding para que se vea más espacioso */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  max-width: 500px; /* Limita el ancho del contenedor */
-  margin: 0 auto; /* Centra el contenedor */
-}
-
+/* Section Styling */
 .section-title {
-  font-size: 36px;
-  font-weight: bold;
-  color: #1e3a8a;
-  margin-bottom: 15px;
+  position: relative;
+  padding-bottom: 15px;
+  margin-bottom: 30px;
+  text-align: center;
+  font-weight: 700;
+  color: var(--dark);
+}
+
+.section-title:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: var(--accent);
+}
+
+.divider {
+  width: 80px;
+  height: 4px;
+  background: var(--accent);
+  margin: 15px auto 25px;
+}
+
+/* About Section */
+.about-section {
+  padding: 80px 0;
+}
+
+.image-container {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.image-container img {
+  transition: var(--transition);
+}
+
+.image-container:hover img {
+  transform: scale(1.03);
+}
+
+.experience-badge {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  background: var(--accent);
+  color: white;
+  padding: 15px 20px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.experience-badge .years {
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.experience-badge .text {
+  font-size: 0.9rem;
   text-align: center;
 }
 
-.container {
-  max-width: 1000px; /* Aumenté el ancho del contenedor para que ocupe más espacio */
-  margin: 0 auto;
+.value-cards {
+  margin-top: 30px;
 }
 
-.form-row {
+.value-card {
   display: flex;
-  flex-wrap: wrap;
   gap: 20px;
+  margin-bottom: 25px;
+  padding: 20px;
+  border-radius: 10px;
+  background: white;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+}
+
+.value-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.value-card .icon {
+  width: 60px;
+  height: 60px;
+  background: var(--primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.value-card .content h3 {
+  color: var(--primary);
+  margin-bottom: 10px;
+}
+
+/* Mission & Vision Section */
+.mission-vision-section {
+  background: linear-gradient(to bottom, #f8f9fa 0%, #e9ecef 100%);
+}
+
+.mission-card, .vision-card {
+  border: none;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+  height: 100%;
+}
+
+.mission-card:hover, .vision-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+.mission-card .card-body, .vision-card .card-body {
+  padding: 30px;
+  position: relative;
+}
+
+.mission-card .icon, .vision-card .icon {
+  position: absolute;
+  top: -30px;
+  right: 30px;
+  width: 80px;
+  height: 80px;
+  background: var(--primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 2rem;
+  box-shadow: 0 5px 15px rgba(30, 58, 138, 0.3);
+}
+
+.mission-card .icon {
+  background: var(--accent);
+}
+
+.card-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: var(--dark);
+}
+
+/* Values Section */
+.values-section {
+  background: white;
+}
+
+.value-card {
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  padding: 30px 20px;
+  text-align: center;
+  transition: var(--transition);
+  height: 100%;
+}
+
+.value-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.value-icon {
+  width: 80px;
+  height: 80px;
+  background: var(--primary);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  font-size: 2rem;
+  transition: var(--transition);
+}
+
+.value-card:hover .value-icon {
+  background: var(--accent);
+  transform: scale(1.1);
+}
+
+.value-card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+  color: var(--dark);
+}
+
+/* Contact Section */
+.contact-section {
+  background: linear-gradient(to bottom, #f8f9fa 0%, #e9ecef 100%);
+}
+
+.contact-card, .contact-form-card {
+  background: white;
+  border-radius: 15px;
+  box-shadow: var(--shadow);
+  padding: 30px;
+  height: 100%;
+}
+
+.contact-info {
+  margin-top: 30px;
+}
+
+.contact-item {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 25px;
+}
+
+.contact-icon {
+  width: 50px;
+  height: 50px;
+  background: var(--primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+.contact-details h4 {
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+  color: var(--dark);
+}
+
+.contact-details p {
+  margin: 0;
+  color: var(--gray);
 }
 
 .form-group {
   margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: var(--dark);
+}
+
+.form-control, .form-select {
+  border: 1px solid var(--light-gray);
+  border-radius: 8px;
+  padding: 12px 15px;
   width: 100%;
+  transition: var(--transition);
 }
 
-.form-control {
-  border-radius: 10px;
-  padding: 10px;
-  font-size: 16px;
-  width: 100%;
-  box-sizing: border-box;
-  border: 1px solid #ccc;
+.form-control:focus, .form-select:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.1);
+  outline: none;
 }
 
-.form-check {
-  margin-bottom: 20px;
-}
-
-.form-check-input {
-  margin-right: 10px;
-}
-
-.btn-danger {
-  background-color: #ef4444;
+.btn-primary {
+  background: linear-gradient(to right, var(--primary) 0%, #0d2b5c 100%);
   color: white;
-  font-weight: bold;
-  padding: 15px 20px;
-  border-radius: 10px;
-  width: 100%;
-  box-sizing: border-box;
-  text-align: center;
   border: none;
+  border-radius: 8px;
+  padding: 12px 20px;
+  font-weight: 600;
+  transition: var(--transition);
+  box-shadow: 0 4px 10px rgba(30, 58, 138, 0.3);
 }
 
-.btn-danger:hover {
-  background-color: #c82333;
+.btn-primary:hover {
+  background: linear-gradient(to right, #0d2b5c 0%, var(--primary) 100%);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(30, 58, 138, 0.4);
+}
+
+.btn-primary:disabled {
+  background: var(--light-gray);
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .breadcrumb-title {
+    font-size: 2.5rem;
+  }
 }
 
 @media (max-width: 768px) {
-  .form-group {
-    width: 100%;
+  .breadcrumb-section {
+    height: 250px;
   }
-
-  .btn-danger {
-    width: auto;
-  }
-}
-
   
-  /* Contenedor de la línea */
-.line-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 20px;
-}
-
-/* Línea con círculos */
-.line {
-  display: flex;
-  justify-content: space-between;
-  width: 300px;  /* Ajusta el largo de la línea */
-  height: 4px;  /* Grosor de la línea */
-  background-color:var(--secondary-color);  /* Rojo para la línea */
-  position: relative;
-  overflow: hidden;
-}
-
-/* Círculos */
-.circle {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background-color:var(--primary-color);
-  position: absolute;
-  top: -3px; /* Ajuste para alinear los círculos a la línea */
-  animation: moveCircle 1.5s linear infinite;
-}
-
-/* Animación para los círculos */
-@keyframes moveCircle {
-  0% {
-    left: 0;
+  .breadcrumb-title {
+    font-size: 2rem;
   }
-  50% {
-    left: 100%;
+  
+  .experience-badge {
+    padding: 10px 15px;
   }
-  100% {
-    left: 0;
+  
+  .experience-badge .years {
+    font-size: 1.5rem;
+  }
+  
+  .value-card {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .value-card .icon {
+    margin: 0 auto;
   }
 }
 
-/* Delay para cada círculo */
-.circle:nth-child(1) {
-  animation-delay: 2s;
-}
-
-.circle:nth-child(2) {
-  animation-delay: 0.5s;
-}
-
-.circle:nth-child(3) {
-  animation-delay: 3s;
+@media (max-width: 576px) {
+  .section-title {
+    font-size: 1.8rem;
+  }
+  
+  .contact-item {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .contact-icon {
+    margin: 0 auto;
+  }
 }

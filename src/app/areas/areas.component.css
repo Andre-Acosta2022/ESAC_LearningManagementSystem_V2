@@ -1,159 +1,194 @@
-/* Definición de variables CSS */
+/* Variables de colores */
 :root {
-    --primary-color: #1e3a8a;  /* Azul */
-    --secondary-color: #ef4444;  /* Rojo */
-    --text-color: #ffffff;  /* Blanco */
-    --background-color: #f3f4f6;  /* Gris claro */
-    --hover-color: #c82333;  /* Rojo más oscuro en hover */
-  }
-  
-/* Contenedor general */
-.container {
+  --primary: #1e3a8a;
+  --secondary: #c51111;
+  --accent: #ef4444;
+  --light: #f8f9fa;
+  --dark: #1f2937;
+  --gray: #6c757d;
+  --light-gray: #e9ecef;
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  --transition: all 0.3s ease;
+}
+
+/* Sección de Especialidades */
+.specialties-section {
+  padding: 80px 0;
+  background-color: var(--light);
+}
+
+.section-title {
+  position: relative;
+  padding-bottom: 15px;
+  margin-bottom: 15px;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.section-title:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 4px;
+  background: var(--accent);
+}
+
+.section-subtitle {
+  color: var(--gray);
+  margin-bottom: 30px;
+  font-size: 1.1rem;
+}
+
+.specialties-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+.specialty-btn {
   display: flex;
-  justify-content: space-between;
-  padding: 40px;
-  gap: 30px; /* Añadir espacio entre la lista y la imagen */
+  align-items: center;
+  background: white;
+  border: 1px solid var(--light-gray);
+  border-radius: 8px;
+  padding: 15px;
+  font-weight: 600;
+  color: var(--dark);
+  text-align: left;
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
 }
 
-/* Estilos para la lista de especialidades */
-.specialties {
-  width: 50%; /* Establece el ancho de la lista */
+.specialty-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow);
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.specialty-btn.active {
+  background: var(--primary);
+  color: white;
+  border-color: var(--primary);
+}
+
+.specialty-btn i {
+  font-size: 1.2rem;
+}
+
+.image-container {
+  position: relative;
   border-radius: 10px;
-  padding: 10px;
-  background-color: var(--background-color);
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  box-shadow: var(--shadow);
 }
 
-.specialties h3 {
-  font-size: 24px;
-  font-weight: bold;
-  margin-bottom: 20px;
-  color: var(--primary-color);
+.image-container img {
+  transition: var(--transition);
+}
+
+.image-container:hover img {
+  transform: scale(1.03);
+}
+
+.overlay-text {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(30, 58, 138, 0.85);
+  color: white;
+  padding: 20px;
+  transition: var(--transition);
+}
+
+.image-container:hover .overlay-text {
+  background: rgba(197, 17, 17, 0.9);
+}
+
+.overlay-text h3 {
+  font-size: 1.4rem;
+  margin-bottom: 5px;
+}
+
+/* Sección de Servicios */
+.services-section {
+  padding: 80px 0;
+  background: linear-gradient(to bottom, #f8f9fa 0%, #e9ecef 100%);
+}
+
+.divider {
+  width: 80px;
+  height: 4px;
+  background: var(--accent);
+  margin: 15px auto 25px;
+}
+
+.service-card {
+  background: white;
+  border-radius: 10px;
+  padding: 30px;
+  height: 100%;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
   text-align: center;
 }
 
-.list-group {
-  padding-left: 0;
-  margin-bottom: 0;
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
 }
 
-.list-group-item {
-  padding: 15px;
-  background-color:transparent;
-  margin-bottom: 10px;
-  transition: background-color 0.3s, color 0.3s;
+.service-icon {
+  width: 70px;
+  height: 70px;
+  background: var(--primary);
+  color: white;
+  border-radius: 50%;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  font-size: 1.8rem;
+  transition: var(--transition);
 }
 
-/* Estilo para el botón */
-.specialty-btn {
-  display: block;
-  width: 100%;
-  background-color: white;
-  border: 1px solid #ddd; /* Bordes del botón */
-  border-radius: 8px; /* Borde redondeado */
-  font-size: 18px;
-  color: var(--primary-color);
-  text-align: left;
-  padding: 10px;
-  cursor: pointer;
-  font-weight: bold;
-  transition: background-color 0.3s, color 0.3s;
+.service-card:hover .service-icon {
+  background: var(--accent);
+  transform: scale(1.1);
 }
 
-/* Estilo para el hover del botón */
-.specialty-btn:hover {
-  background-color: var(--secondary-color);
-  color: var(--text-color);
+.service-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+  color: var(--primary);
 }
 
-/* Estilos para la imagen */
-.image-container img {
-  width: 100%;
-  height: auto;
-  border-radius: 10px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+.service-card p {
+  color: var(--gray);
+  font-size: 0.95rem;
 }
 
-/* Asegúrate de que la imagen sea proporcional */
-.image-container {
-  width: 45%; /* Controla el tamaño de la imagen */
-}
-
-/* Adaptaciones en pantallas pequeñas */
-@media (max-width: 768px) {
-  .container {
-      flex-direction: column;
-      align-items: center;
-  }
-
-  .specialties, .image-container {
-      width: 90%; /* Hacer la lista y la imagen más grandes en pantallas pequeñas */
-  }
-}
-  /* Estilos generales */
-:root {
-    --primary-color: #1e3a8a;  /* Azul primario */
-    --secondary-color: #ef4444;  /* Rojo primario */
-    --text-color: #ffffff;  /* Blanco */
-    --background-color: #f3f4f6;  /* Gris claro */
-    --hover-color: #e40606;  /* Hover color */
-    --title-color: #2c3e50;  /* Color para los títulos */
+/* Responsive */
+@media (max-width: 992px) {
+  .specialties-grid {
+    grid-template-columns: 1fr;
   }
   
-  /* Contenedor de los servicios */
-  .services {
-    padding: 40px 20px;
-    background-color: var(--background-color);
-  }
-  
-  h2.section-title {
+  .section-title {
     font-size: 1.8rem;
-    color: var(--primary-color);
-    margin-bottom: 15px;
-    font-weight: bold;
+  }
+}
+
+@media (max-width: 768px) {
+  .specialties-section, .services-section {
+    padding: 60px 0;
   }
   
-  .service-description {
-    font-size: 1rem;
-    color: var(--text-color);
-    margin-bottom: 25px;
+  .image-container {
+    margin-top: 30px;
   }
-  
-  /* Estilos para los servicios, alternando colores */
-  .services .service-description:nth-child(odd) {
-    background-color: var(--secondary-color);
-    padding: 10px;
-    border-radius: 8px;
-  }
-  
-  .services .service-description:nth-child(even) {
-    background-color: var(--primary-color);
-    padding: 10px;
-    border-radius: 8px;
-  }
-  
-  .services p {
-    font-size: 1rem;
-    color: var(--text-color);
-  }
-  
-  /* Hover para la sección de texto */
-  .service-description:hover {
-    background-color: var(--hover-color);
-    transition: background-color 0.3s ease;
-  }
-  
-  /* Ajustes responsivos */
-  @media (max-width: 768px) {
-    .services {
-      padding: 20px 10px;
-    }
-  
-    .service-description {
-      font-size: 0.9rem;
-    }
-  }
-  
+}

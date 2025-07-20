@@ -1,63 +1,85 @@
 <header>
-  <div class="container-fluid d-flex justify-content-around align-items-center py-2 first-container">
-    <!-- Redes Sociales -->
-    <div class="social-icons">
-      <a href="#" class="social-icon"><i class="fa-brands fa-facebook-f"></i></a>
-      <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-      <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
-      <a href="#" class="social-icon"><i class="fab fa-pinterest"></i></a>
-      <a href="#" class="social-icon"><i class="fab fa-vimeo"></i></a>
-    </div>
+  <!-- Barra superior con información de contacto y redes sociales -->
+  <div class="top-bar">
+    <div class="container d-flex justify-content-between align-items-center">
+      <!-- Redes Sociales -->
+      <div class="social-icons">
+        <a href="#" class="social-icon" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="social-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="social-icon" aria-label="Linkedin"><i class="fab fa-linkedin"></i></a>
+        <a href="#" class="social-icon" aria-label="Tiktok"><i class="fab fa-tiktok"></i></a>
+        <a href="#" class="social-icon" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="social-icon" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
 
-    <!-- Información de Contacto -->
-    <div class="contact-info text-right">
+      </div>
+
+      <!-- Información de Contacto -->
+      <div class="contact-info">
         <div class="contact-item">
-          <i class="fa-solid fa-house"></i> <p class="mb-0">Ñaña - Lima</p>
+          <i class="fas fa-map-marker-alt"></i>
+          <span>Ñaña - Lima</span>
         </div>
         <div class="contact-item">
-          <a href="">
-            <i class="fa-solid fa-phone"></i> <p class="mb-0">+51 916 356 566</p>
+          <a href="tel:+51916356566">
+            <i class="fas fa-phone"></i>
+            <span>+51 916 356 566</span>
           </a>
         </div>
         <div class="contact-item">
-          <p class="mb-0">
-            <a href="mailto:informes@esacperu.com" class="text-white">informesesacperu.com</a>
-          </p>
+          <a href="mailto:informes@esacperu.com">
+            <i class="fas fa-envelope"></i>
+            <span>informesesacperu.com</span>
+          </a>
         </div>
       </div>
-  </div>
-
-  <!-- Segundo contenedor: Logo, Nombre de la Universidad y Barra de Navegación -->
-  <div id="second-container" class="container-fluid d-flex justify-content-around align-items-center py-6 second-container">
-    <!-- Logo y Nombre de la Universidad -->
-    <div class="d-flex align-items-center">
-      <img src="/human-brain-icon-isolated-vector.jpg" alt="ESAC Logo" class="logo-img mr-3" />
-    </div>
-
-    <!-- Barra de navegación -->
-    <nav>
-      <ul class="nav">
-        <li class="nav-item">
-          <a class="nav-link text-white" href="/">Inicio</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-white" href="/about">Nosotros</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-white" href="/areas">Áreas</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-white" href="/courses">Cursos</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-white" href="/contact">Contáctenos</a>
-        </li>
-      </ul>
-    </nav>
-
-    <!-- Botón Aula Virtual -->
-    <div>
-      <a routerLink="/login" class="btn btn-dark">Aula Virtual</a>
     </div>
   </div>
+
+  <!-- Barra principal de navegación -->
+  <nav class="main-nav" [class.scrolled]="isScrolled">
+    <div class="container d-flex justify-content-between align-items-center">
+      <!-- Logo y nombre -->
+      <div class="brand">
+        <a routerLink="">
+          <img src="/logo.png" alt="ESAC Logo" class="logo">
+          <span class="brand-name">ESAC</span>
+        </a>
+      </div>
+
+            <!-- Menú de navegación -->
+      <div class="nav-links">
+        <ul>
+          <li><a routerLink="/" class="nav-link">Inicio</a></li>
+          <li><a routerLink="/about" class="nav-link">Nosotros</a></li>
+          <li><a routerLink="/areas" class="nav-link">Áreas</a></li>
+          <li><a routerLink="/courses" class="nav-link">Cursos</a></li>
+          <li><a routerLink="/contact" class="nav-link">Contáctenos</a></li>
+        </ul>
+      </div>
+
+      <!-- Botón Aula Virtual -->
+      <div class="virtual-classroom">
+        <a routerLink="/login" class="btn btn-primary">Aula Virtual</a>
+      </div>
+
+      <!-- Menú hamburguesa para móviles -->
+      <button class="hamburger" (click)="toggleMenu()" aria-label="Menú">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Menú móvil desplegable -->
+  <div class="mobile-menu" [class.active]="isMenuOpen">
+    <ul>
+      <li><a routerLink="/" (click)="closeMenu()">Inicio</a></li>
+      <li><a routerLink="/about" (click)="closeMenu()">Nosotros</a></li>
+      <li><a routerLink="/areas" (click)="closeMenu()">Áreas</a></li>
+      <li><a routerLink="/courses" (click)="closeMenu()">Cursos</a></li>
+      <li><a routerLink="/contact" (click)="closeMenu()">Contáctenos</a></li>
+      <li><a routerLink="/login" (click)="closeMenu()" class="btn btn-primary mobile-btn">Aula Virtual</a></li>
+    </ul>
+  </div>
+  <!-- Overlay -->
+<div class="mobile-overlay" [class.active]="isMenuOpen" (click)="toggleMenu()"></div>
 </header>

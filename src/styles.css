@@ -40,6 +40,66 @@ body {
  
   --scrolled-bg-color: #333333; /* Color de fondo cuando se hace scroll */
   --text-color2: #ffffff; /* Blanco para texto */
+
+
+  
+  --primary: #1e3a8a;
+  --secondary: #c51111;
+  --accent: #ef4444;
+  --light: #f3f4f6;
+  --dark: #1f2937;
+  --text-light: #ffffff;
+  --text-dark: #111827;
+  --top-bar-bg: #2c3e50;
+  --nav-bg: #1e3a8a;
+  --nav-scrolled-bg: rgba(30, 58, 138, 0.95);
+  --transition: all 0.3s ease;
+  
+  --primary: #1e3a8a;
+  --secondary: #c51111;
+  --accent: #ef4444;
+  --light: #f3f4f6;
+  --dark: #1f2937;
+  --text-light: #ffffff;
+  --text-dark: #111827;
+  --footer-bg: #1f2937;
+  --footer-top-bg: rgba(31, 41, 55, 0.95);
+  --footer-bottom-bg: #111827;
+
+
+  
+  --primary: #1e3a8a;
+  --secondary: #c51111;
+  --accent: #ef4444;
+  --light: #f3f4f6;
+  --dark: #1f2937;
+  --text-light: #ffffff;
+  --text-dark: #111827;
+
+
+  
+  --primary: #1e3a8a;
+  --secondary: #c51111;
+  --accent: #ef4444;
+  --light: #f8f9fa;
+  --dark: #1f2937;
+  --gray: #6c757d;
+  --light-gray: #e9ecef;
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  --transition: all 0.3s ease;
+
+
+  /* Variables de colores */
+
+  --primary: #1e3a8a;
+  --secondary: #c51111;
+  --accent: #ef4444;
+  --light: #f8f9fa;
+  --dark: #1f2937;
+  --gray: #6c757d;
+  --light-gray: #e9ecef;
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  --transition: all 0.3s ease;
 }
 
   /* Contenedor de la línea */
